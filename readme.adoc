@@ -43,7 +43,7 @@ FROM ghcr.io/k3rnelpan1c-dev/alpine-wget:3.13
 
 == Build
 
-This repository is mostly automated for easy maintenance, however the `Containerfile` can be always build locally via the following commands.
+This repository is mostly automated for easy maintenance, however the `Dockerfile` can be always build locally via the following commands.
 
 .Build with link:https://github.com/docker/cli[Docker]
 [source,shell]
