@@ -1,0 +1,64 @@
+[[alpine-wget]]
+= Alpine-wget
+:toc: macro
+:toc-title:
+
+image:https://img.shields.io/github/license/k3rnelpan1c-dev/alpine-wget.svg?style=flat-square[GPLv3 Licence,link="https://opensource.org/licenses/GPL-3.0"]
+image:https://img.shields.io/maintenance/yes/2021?style=flat-square[This repo is maintained]
+image:https://img.shields.io/github/contributors/k3rnelpan1c-dev/alpine-wget.svg?color=blue&style=flat-square[link="https://github.com/k3rnelpan1c-dev/alpine-wget/graphs/contributors"]
+
+== About
+
+This repo and image exist for no particular reason than providing and up to date and mostly self updating alternative to the multitude of `alpine-wget` and `wget` images found on DockerHub and the likes.
+Notably this image was inspired by the use of `rjkernick/alpine-wget` in the now 'official' link:https://github.com/SonarSource/helm-chart-sonarqube[SonarQube Helm Chart].
+
+The repo is mostly automated via a combination of Dependabot and GitHub Actions that keep this simple link:https://alpinelinux.org/[Alpine Linux] Image with a full installation of link:https://www.gnu.org/software/wget/wget.html[wget] up to date.
+
+toc::[]
+
+== Usage
+
+This container image is hosted on multiple registries for your convenience.
+
+.DockerHub
+[source,Dockerfile]
+----
+FROM docker.io/k3rnelpan1c/alpine-wget:3.13
+# ...
+----
+
+.Quay
+[source,Dockerfile]
+----
+FROM quay.io/k3rnel-pan1c/alpine-wget:3.13
+# ...
+----
+
+.GitHub Registry
+[source,Dockerfile]
+----
+FROM ghcr.io/k3rnelpan1c-dev/alpine-wget:3.13
+# ...
+----
+
+== Build
+
+This repository is mostly automated for easy maintenance, however the `Containerfile` can be always build locally via the following commands.
+
+.Build with link:https://github.com/docker/cli[Docker]
+[source,shell]
+----
+docker build -f Containerfile -t alpine-wget:latest .
+----
+
+.Build with link:https://github.com/containers/podman[Podman]
+[source,shell]
+----
+podman bud -f Containerfile -t alpine-wget:latest .
+----
+
+== Licence
+
+image:https://www.gnu.org/graphics/gplv3-or-later.svg[GPLv3 or later SVG,link="https://www.gnu.org/licenses/gpl-3.0.en.html"]
+
+This Project is licenced under the GNU General Public License v3 and up. For more info refer to the link:./LICENCE[LICENCE] file.
