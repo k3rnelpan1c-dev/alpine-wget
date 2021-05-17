@@ -1,0 +1,27 @@
+name: Scan Container Image Periodically
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '38 8 * * 6'
+
+jobs:
+  scan_image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull latest 3.x.y Image
+        run: podman pull ghcr.io/${{ github.repository_owner }}/alpine-wget:3
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ghcr.io/${{ github.repository_owner }}/alpine-wget:3
+          vuln-type: os
+          format: template
+          template: '@/contrib/sarif.tpl'
+          output: trivy-results.sarif
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: trivy-results.sarif
