@@ -1,7 +1,7 @@
-FROM docker.io/alpine:3.13.5
+FROM docker.io/alpine:3.14.0
 
 LABEL maintainer="k3rnelpan1c-dev" \
-      version="3.13.5" \
+      version="3.14.0" \
       description="A basic Alpine Linux container image with a full wget install"
 
 RUN apk add --no-cache wget
