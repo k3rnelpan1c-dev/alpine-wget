@@ -1,4 +1,4 @@
-FROM docker.io/alpine:3.14.1
+FROM docker.io/alpine:3.14.2
 
 LABEL maintainer="k3rnelpan1c-dev" \
       version="3.14.0" \
