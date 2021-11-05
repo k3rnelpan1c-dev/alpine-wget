@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "config:base",
+    ":automergePatch"
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["docker.io/alpine"],
+      "versioning": "semver"
+    }
+  ],
+  "dockerfile": {
+    "fileMatch": [
+      "Containerfile",
+      "Containerfile\\..*"
+    ]
+  }
+}
