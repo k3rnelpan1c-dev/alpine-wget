@@ -27,7 +27,7 @@ jobs:
           image: alpine-wget
           tags: latest ${{ env.MAJOR }} ${{ env.MAJOR_MINOR }} ${{ env.SEMVER }} ${{ env.SHORT_SHA }}
           oci: true
-          dockerfiles: ./Dockerfile
+          containerfiles: ./Containerfile
 
       - name: Publish Image to ghcr.io
         uses: redhat-actions/push-to-registry@v2
