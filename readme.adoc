@@ -14,7 +14,7 @@ Notably this image was inspired by the use of the outdated `rjkernick/alpine-wge
 
 The repo is mostly automated via a combination of Dependabot and GitHub Actions that keep this simple link:https://alpinelinux.org/[Alpine Linux] Image with a full installation of link:https://www.gnu.org/software/wget/wget.html[wget] up to date.
 
-NOTE: As of 3.15.1 his image is also available with `ARM` Architectures in mind alongside the usual `AMD64`
+NOTE: As of 3.15.1 this image is also available with `ARM` Architectures in mind alongside the usual `AMD64`
 
 toc::[]
 
