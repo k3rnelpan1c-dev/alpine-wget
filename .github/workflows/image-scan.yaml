@@ -13,12 +13,11 @@ jobs:
         run: podman pull ghcr.io/${{ github.repository_owner }}/alpine-wget:3
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@0.2.2
         with:
           image-ref: ghcr.io/${{ github.repository_owner }}/alpine-wget:3
           vuln-type: os
-          format: template
-          template: '@/contrib/sarif.tpl'
+          format: sarif
           output: trivy-results.sarif
 
       - name: Upload Trivy scan results to GitHub Security tab
