@@ -4,11 +4,23 @@
     ":automergePatch",
     ":skipStatusChecks"
   ],
+  "addLabels": ["dependencies"],
   "packageRules": [
     {
+      "description": "Treat Alipne docker tag as SemVer version",
       "matchDatasources": ["docker"],
       "matchPackageNames": ["docker.io/alpine"],
       "versioning": "semver"
+    },
+    {
+      "description": "Set patch and minor GitHub Action bumps to group",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": [
+        "patch",
+        "minor"
+      ],
+      "groupName": "CI dependencies",
+      "groupSlug": "gha-patch-minor-bumps"
     }
   ],
   "dockerfile": {
@@ -17,8 +29,7 @@
       "Containerfile\\..*"
     ],
     "labels": [
-      "container",
-      "dependencies"
+      "container"
     ]
   }
 }

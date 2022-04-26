@@ -12,7 +12,7 @@ image:https://img.shields.io/github/contributors/k3rnelpan1c-dev/alpine-wget.svg
 This repo and image exist for no particular reason than providing and up to date and mostly self updating alternative to the multitude of `alpine-wget` and `wget` images found on DockerHub and the likes.
 Notably this image was inspired by the use of the outdated `rjkernick/alpine-wget` in the now 'official' link:https://github.com/SonarSource/helm-chart-sonarqube[SonarQube Helm Chart].
 
-The repo is mostly automated via a combination of Dependabot and GitHub Actions that keep this simple link:https://alpinelinux.org/[Alpine Linux] Image with a full installation of link:https://www.gnu.org/software/wget/wget.html[wget] up to date.
+The repo is mostly automated via a combination of link:https://docs.renovatebot.com/[Renovate-Bot] and GitHub Actions that keep this simple link:https://alpinelinux.org/[Alpine Linux] Image with a full installation of link:https://www.gnu.org/software/wget/wget.html[wget] up to date.
 
 NOTE: As of 3.15.1 this image is also available with `ARM` Architectures in mind alongside the usual `AMD64`
 
