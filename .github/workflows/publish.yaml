@@ -19,7 +19,7 @@ jobs:
 
       - name: Container Metadata
         id: container-metadata
-        uses: docker/metadata-action@v3.8.0
+        uses: docker/metadata-action@v4.0.1
         with:
           images: |-
             alpine-wget
