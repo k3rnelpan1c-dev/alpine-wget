@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3.0.2
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
 
       - name: Install qemu dependency
         run: |-
@@ -19,7 +19,7 @@ jobs:
 
       - name: Container Metadata
         id: container-metadata
-        uses: docker/metadata-action@v4.0.1
+        uses: docker/metadata-action@69f6fc9d46f2f8bf0d5491e4aabe0bb8c6a4678a # tag=v4.0.1
         with:
           images: |-
             alpine-wget
@@ -45,7 +45,7 @@ jobs:
 
       - name: Build Image
         id: build-image
-        uses: redhat-actions/buildah-build@v2.10
+        uses: redhat-actions/buildah-build@d097e2e3d2a45b68a7c09040e3de33427bab66af # tag=v2.10
         with:
           image: alpine-wget
           tags: latest ${{ env.MAJOR }} ${{ env.MAJOR_MINOR }} ${{ env.SEMVER }} sha-${{ env.SHORT_SHA }}
@@ -55,7 +55,7 @@ jobs:
           containerfiles: ./Containerfile
 
       - name: Publish Image to ghcr.io
-        uses: redhat-actions/push-to-registry@v2.5.1
+        uses: redhat-actions/push-to-registry@f787883d70a3cc66d399816d0385ac4aec7079f9 # tag=v2.5.1
         with:
           image: ${{ steps.build-image.outputs.image }}
           tags: ${{ steps.build-image.outputs.tags }}
@@ -64,7 +64,7 @@ jobs:
           password: ${{ secrets.GH_TOKEN }}
 
       - name: Publish Image to quay.io
-        uses: redhat-actions/push-to-registry@v2.5.1
+        uses: redhat-actions/push-to-registry@f787883d70a3cc66d399816d0385ac4aec7079f9 # tag=v2.5.1
         with:
           image: ${{ steps.build-image.outputs.image }}
           tags: ${{ steps.build-image.outputs.tags }}
@@ -73,7 +73,7 @@ jobs:
           password: ${{ secrets.RH_TOKEN }}
 
       - name: Publish Image to docker.io
-        uses: redhat-actions/push-to-registry@v2.5.1
+        uses: redhat-actions/push-to-registry@f787883d70a3cc66d399816d0385ac4aec7079f9 # tag=v2.5.1
         with:
           image: ${{ steps.build-image.outputs.image }}
           tags: ${{ steps.build-image.outputs.tags }}
