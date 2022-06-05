@@ -7,7 +7,7 @@ on:
 
 jobs:
   scan_image:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Pull latest 3.x.y Image
         run: podman pull ghcr.io/${{ github.repository_owner }}/alpine-wget:3

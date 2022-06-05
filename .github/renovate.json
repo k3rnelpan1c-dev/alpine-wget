@@ -2,7 +2,9 @@
   "extends": [
     "config:base",
     ":automergePatch",
-    ":skipStatusChecks"
+    ":skipStatusChecks",
+    "docker:pinDigests",
+    "helpers:pinGitHubActionDigests"
   ],
   "addLabels": ["dependencies"],
   "packageRules": [
