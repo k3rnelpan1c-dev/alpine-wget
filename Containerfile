@@ -1,3 +1,3 @@
-FROM docker.io/alpine:3.16.0@sha256:686d8c9dfa6f3ccfc8230bc3178d23f84eeaf7e457f36f271ab1acc53015037c
+FROM docker.io/alpine:3.16.1@sha256:317014409c95af1abafdf280923db4e9d002bf2e56eb3d8b26a7c399329106bd
 
 RUN apk add --no-cache wget
