@@ -13,7 +13,7 @@ jobs:
         run: podman pull ghcr.io/${{ github.repository_owner }}/alpine-wget:3
 
       - name: Run Trivy vulnerability scanner
-        uses: aquasecurity/trivy-action@503d3abc15463af68b817d685982721f134256a5 # tag=0.6.0
+        uses: aquasecurity/trivy-action@81b9a6f5abb1047d697af7a3ca18c13f55a97315 # tag=0.6.1
         with:
           image-ref: ghcr.io/${{ github.repository_owner }}/alpine-wget:3
           vuln-type: os
