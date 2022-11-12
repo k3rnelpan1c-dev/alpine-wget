@@ -7,6 +7,17 @@ image:https://img.shields.io/github/license/k3rnelpan1c-dev/alpine-wget.svg?styl
 image:https://img.shields.io/maintenance/yes/2022?style=flat-square[This repo is maintained]
 image:https://img.shields.io/github/contributors/k3rnelpan1c-dev/alpine-wget.svg?color=blue&style=flat-square[link="https://github.com/k3rnelpan1c-dev/alpine-wget/graphs/contributors"]
 
+[WARNING]
+====
+I am planing to archive and retire this repository by the end of this year (2022).
+The reason behind this is the very moderate usefulness of this repository/container image.
+Please, if you use this image within your deployments anywhere, be sure to have migrated to either your own fork or to curl and the official `curlimages`.
+
+I will eventually remove all published container images after the March 2023, since I want to avoid being responsible for outdated vulnerable container images.
+
+Br, K3
+====
+
 == About
 
 This repo and image exist for no particular reason than providing and up to date and mostly self updating alternative to the multitude of `alpine-wget` and `wget` images found on DockerHub and the likes.
