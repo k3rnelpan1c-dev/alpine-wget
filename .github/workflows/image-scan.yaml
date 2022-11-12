@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '38 8 * * 6'
 
+permissions:
+  contents: read
+
 jobs:
   scan_image:
     runs-on: ubuntu-22.04
