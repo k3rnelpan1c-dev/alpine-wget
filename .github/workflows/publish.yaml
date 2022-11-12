@@ -6,7 +6,7 @@ on:
       - '*'
 
 permissions:
-  contents: read
+  contents: write
   packages: write
 
 jobs:
@@ -60,15 +60,17 @@ jobs:
 
       - name: Publish Image to ghcr.io
         uses: redhat-actions/push-to-registry@f787883d70a3cc66d399816d0385ac4aec7079f9 # tag=v2.5.1
+        continue-on-error: true
         with:
           image: ${{ steps.build-image.outputs.image }}
           tags: ${{ steps.build-image.outputs.tags }}
           registry: ghcr.io/${{ github.repository_owner }}
           username: ${{ github.actor }}
-          password: ${{ secrets.GH_TOKEN }}
+          password: ${{ github.token }}
 
       - name: Publish Image to quay.io
         uses: redhat-actions/push-to-registry@f787883d70a3cc66d399816d0385ac4aec7079f9 # tag=v2.5.1
+        continue-on-error: true
         with:
           image: ${{ steps.build-image.outputs.image }}
           tags: ${{ steps.build-image.outputs.tags }}
@@ -78,6 +80,7 @@ jobs:
 
       - name: Publish Image to docker.io
         uses: redhat-actions/push-to-registry@f787883d70a3cc66d399816d0385ac4aec7079f9 # tag=v2.5.1
+        continue-on-error: true
         with:
           image: ${{ steps.build-image.outputs.image }}
           tags: ${{ steps.build-image.outputs.tags }}
