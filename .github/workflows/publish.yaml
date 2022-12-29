@@ -49,7 +49,7 @@ jobs:
 
       - name: Build Image
         id: build-image
-        uses: redhat-actions/buildah-build@d097e2e3d2a45b68a7c09040e3de33427bab66af # tag=v2.10
+        uses: redhat-actions/buildah-build@3e3409a0324de94ae9e740122c436c7967f474e2 # v2.11
         with:
           image: alpine-wget
           tags: latest ${{ env.MAJOR }} ${{ env.MAJOR_MINOR }} ${{ env.SEMVER }} sha-${{ env.SHORT_SHA }}
